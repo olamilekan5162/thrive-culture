@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
 export default function PageHero({
   kicker,
@@ -8,11 +8,11 @@ export default function PageHero({
   description,
   breadcrumbs = [],
   children,
-}) {
+}: any) {
   return (
     <section className="bg-stone-100/70 border-b border-stone-200 pt-10 pb-14 lg:pt-14 lg:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {breadcrumbs.length > 0 && (
+        {breadcrumbs?.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-1.5 text-xs text-stone-500">
               <li>
@@ -20,15 +20,20 @@ export default function PageHero({
                   Home
                 </Link>
               </li>
-              {breadcrumbs.map((crumb, idx) => (
+              {breadcrumbs.map((crumb: any, idx: any) => (
                 <li key={idx} className="flex items-center gap-1.5">
                   <ChevronRight className="w-3 h-3 text-stone-400" />
-                  {crumb.path ? (
-                    <Link to={crumb.path} className="hover:text-stone-900 transition-colors">
-                      {crumb.label}
+                  {crumb?.path ? (
+                    <Link
+                      to={crumb?.path}
+                      className="hover:text-stone-900 transition-colors"
+                    >
+                      {crumb?.label}
                     </Link>
                   ) : (
-                    <span className="text-stone-900 font-medium">{crumb.label}</span>
+                    <span className="text-stone-900 font-medium">
+                      {crumb?.label}
+                    </span>
                   )}
                 </li>
               ))}

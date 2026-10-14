@@ -1,31 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Compass, Target, CheckCircle2 } from 'lucide-react';
-import PageHero from '../components/PageHero';
-import SectionHeading from '../components/SectionHeading';
-import PlaceholderNotice from '../components/PlaceholderNotice';
-import { siteConfig } from '../data/siteConfig';
+import { Link } from "react-router-dom";
+import { ArrowRight, Compass, Target } from "lucide-react";
+import PageHero from "../components/PageHero";
+import SectionHeading from "../components/SectionHeading";
+import PlaceholderNotice from "../components/PlaceholderNotice";
+import { siteConfig } from "../data/siteConfig";
 
 export default function AboutPage() {
-  const mentorshipImage = "/src/assets/images/mentorship_collaboration_1791935608626.jpg";
+  const mentorshipImage =
+    "/src/assets/images/mentorship_collaboration_1791935608626.jpg";
   const youthImage = "/src/assets/images/hero_thrive_youth_1791935607522.jpg";
 
   return (
     <div className="bg-stone-50">
-      
       {/* 1. PAGE HERO */}
       <PageHero
         kicker="About Thrive Culture"
         title="We Exist to Expand What Young People Deem Possible."
         description="Thrive Culture connects emerging generations with transformative exposure, practical skills, and lifelong networks."
-        breadcrumbs={[{ label: 'About' }]}
+        breadcrumbs={[{ label: "About" }]}
       />
 
       {/* 2. THE STORY (Simple, human, crisp) */}
       <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
             <div className="lg:col-span-6 space-y-4">
               <SectionHeading
                 kicker="Our Story"
@@ -35,10 +33,16 @@ export default function AboutPage() {
 
               <div className="space-y-3 text-stone-600 text-sm sm:text-base leading-relaxed">
                 <p>
-                  Thrive Culture was founded to change this. We believe intentional exposure is the ultimate equalizer. By bringing young minds into direct contact with visionary practitioners and immersive camps, we replace self-doubt with clear ambition.
+                  Thrive Culture was founded to change this. We believe
+                  intentional exposure is the ultimate equalizer. By bringing
+                  young minds into direct contact with visionary practitioners
+                  and immersive camps, we replace self-doubt with clear
+                  ambition.
                 </p>
                 <p>
-                  We are not a one-time workshop. We are building an enduring ecosystem of residential camps, student conferences, and partner pathways that support young leaders over the long run.
+                  We are not a one-time workshop. We are building an enduring
+                  ecosystem of residential camps, student conferences, and
+                  partner pathways that support young leaders over the long run.
                 </p>
               </div>
             </div>
@@ -53,7 +57,6 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -61,7 +64,6 @@ export default function AboutPage() {
       {/* 3. VISION & MISSION (Punchy cards) */}
       <section className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <SectionHeading
             kicker="North Stars"
             title="Vision & Mission"
@@ -70,7 +72,6 @@ export default function AboutPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
             {/* Vision */}
             <div className="bg-white p-7 rounded-xl border border-stone-200 shadow-xs flex flex-col justify-between space-y-4">
               <div>
@@ -112,9 +113,7 @@ export default function AboutPage() {
                 message={siteConfig.statements.mission.note}
               />
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -137,7 +136,8 @@ export default function AboutPage() {
                   Beyond Survival
                 </h4>
                 <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                  Moving beyond merely coping to building deep competence, financial agency, and purposeful work.
+                  Moving beyond merely coping to building deep competence,
+                  financial agency, and purposeful work.
                 </p>
               </div>
 
@@ -149,7 +149,8 @@ export default function AboutPage() {
                   Shared Standards
                 </h4>
                 <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                  Willpower is fragile; culture lasts. When high standards are the group norm, growth becomes natural.
+                  Willpower is fragile; culture lasts. When high standards are
+                  the group norm, growth becomes natural.
                 </p>
               </div>
             </div>
@@ -238,7 +239,8 @@ export default function AboutPage() {
             Join the Movement.
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed">
-            Explore our flagship Thrive 20 Camp or partner with us to sponsor future cohorts.
+            Explore our flagship Thrive 20 Camp or partner with us to sponsor
+            future cohorts.
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
@@ -257,7 +259,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
