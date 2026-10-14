@@ -1,31 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Compass, Users, Layers } from 'lucide-react';
-import PageHero from '../components/PageHero';
-import SectionHeading from '../components/SectionHeading';
-import { siteConfig } from '../data/siteConfig';
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, Compass, Users, Layers } from "lucide-react";
+import PageHero from "../components/PageHero";
+import SectionHeading from "../components/SectionHeading";
+import { siteConfig } from "../data/siteConfig";
 
 export default function InitiativesPage() {
-  const thrive20 = siteConfig.initiatives.find((i) => i.id === 'thrive-20-camp');
-  const nslc = siteConfig.initiatives.find((i) => i.id === 'nslc');
+  const thrive20 = siteConfig.initiatives.find(
+    (i) => i.id === "thrive-20-camp",
+  );
+  const nslc = siteConfig.initiatives.find((i) => i.id === "nslc");
 
   return (
     <div className="bg-stone-50">
-      
       {/* 1. PAGE HERO */}
       <PageHero
         kicker="Initiatives"
         title="Our Ecosystem of Programmes"
         description="Targeted interventions designed to spark self-direction, practical agency, and lifelong relationships."
-        breadcrumbs={[{ label: 'Initiatives' }]}
+        breadcrumbs={[{ label: "Initiatives" }]}
       />
 
       {/* 2. THRIVE 20 CAMP SPOTLIGHT */}
-      <section id="thrive-20-camp" className="py-14 lg:py-20 bg-white border-b border-stone-200 scroll-mt-20">
+      <section
+        id="thrive-20-camp"
+        className="py-14 lg:py-20 bg-white border-b border-stone-200 scroll-mt-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-xl overflow-hidden border border-stone-200 shadow-sm bg-stone-100 aspect-16/9 lg:aspect-4/3">
                 <img
@@ -80,18 +81,17 @@ export default function InitiativesPage() {
                 </a>
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
       {/* 3. NSLC */}
-      <section id="nslc" className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200 scroll-mt-20">
+      <section
+        id="nslc"
+        className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200 scroll-mt-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
             <div className="lg:col-span-6 space-y-4 order-2 lg:order-1">
               <div className="flex items-center gap-2 text-xs font-semibold text-stone-500">
                 <span>{nslc.cohortDetails.format}</span>
@@ -135,16 +135,13 @@ export default function InitiativesPage() {
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
       {/* 4. PIPELINE ROADMAP */}
       <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <SectionHeading
             kicker="Pipeline"
             title="Future Programmes in Development"
@@ -155,35 +152,48 @@ export default function InitiativesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="p-5 bg-stone-50 border border-stone-200 rounded-xl space-y-2">
               <Layers className="w-5 h-5 text-[#F28524]" />
-              <div className="text-xs font-mono font-bold text-[#D96D14]">In Design</div>
-              <h3 className="font-bold text-stone-950 text-sm">Creative & Tech Labs</h3>
+              <div className="text-xs font-mono font-bold text-[#D96D14]">
+                In Design
+              </div>
+              <h3 className="font-bold text-stone-950 text-sm">
+                Creative & Tech Labs
+              </h3>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Weekend studios pairing young creators with software developers, designers, and film producers.
+                Weekend studios pairing young creators with software developers,
+                designers, and film producers.
               </p>
             </div>
 
             <div className="p-5 bg-stone-50 border border-stone-200 rounded-xl space-y-2">
               <Compass className="w-5 h-5 text-[#F28524]" />
-              <div className="text-xs font-mono font-bold text-[#D96D14]">Scoping</div>
-              <h3 className="font-bold text-stone-950 text-sm">Childhood Discovery Circles</h3>
+              <div className="text-xs font-mono font-bold text-[#D96D14]">
+                Scoping
+              </div>
+              <h3 className="font-bold text-stone-950 text-sm">
+                Childhood Discovery Circles
+              </h3>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Early-stage visits to laboratories, parliaments, and art studios for children aged 9–14.
+                Early-stage visits to laboratories, parliaments, and art studios
+                for children aged 9–14.
               </p>
             </div>
 
             <div className="p-5 bg-stone-50 border border-stone-200 rounded-xl space-y-2">
               <Users className="w-5 h-5 text-[#F28524]" />
-              <div className="text-xs font-mono font-bold text-[#D96D14]">Ongoing</div>
-              <h3 className="font-bold text-stone-950 text-sm">Alumni Circles</h3>
+              <div className="text-xs font-mono font-bold text-[#D96D14]">
+                Ongoing
+              </div>
+              <h3 className="font-bold text-stone-950 text-sm">
+                Alumni Circles
+              </h3>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Peer masterminds structured to support Thrive 20 graduates in reviewing their life plans quarterly.
+                Peer masterminds structured to support Thrive 20 graduates in
+                reviewing their life plans quarterly.
               </p>
             </div>
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }

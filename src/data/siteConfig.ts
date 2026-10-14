@@ -3,6 +3,9 @@
  * Crisp, streamlined content with #F28524 brand identity.
  */
 
+import thrive20Image from "../assets/images/thrive20_residential_camp_1791935607590.jpg";
+import nslcImage from "../assets/images/students_leadership_conference_1791935607993.jpg";
+
 export const siteConfig = {
   orgName: "Thrive Culture",
   tagline: "Helping Young People See Beyond What's Possible",
@@ -70,7 +73,7 @@ export const siteConfig = {
         "A four-day residential retreat for young people entering their twenties to gain clarity, build practical life skills, and create a concrete personal roadmap.",
       fullDescription:
         "Entering your twenties is life's most defining transition. Thrive 20 Camp brings 25–30 young adults together in a distraction-free setting to build durable habits, examine their ambitions, and forge lasting peer bonds.",
-      image: "../assets/images/thrive20_residential_camp_1791935607590.jpg",
+      image: thrive20Image,
       cohortDetails: {
         duration: "4 Days / 3 Nights",
         pilotTarget: "25–30 Participants",
@@ -118,8 +121,7 @@ export const siteConfig = {
         "A nationwide summit bringing student leaders together to tackle institutional innovation, civic governance, and youth-led initiatives.",
       fullDescription:
         "NSLC unites campus pioneers across universities and schools for intensive working labs, dialogue with seasoned leaders, and cross-institutional problem-solving.",
-      image:
-        "../assets/images/students_leadership_conference_1791935607993.jpg",
+      image: nslcImage,
       cohortDetails: {
         duration: "Multi-Day Summit",
         pilotTarget: "Campus & Student Delegates",

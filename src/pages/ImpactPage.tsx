@@ -1,29 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, BarChart3, FileText, CheckCircle2 } from 'lucide-react';
-import PageHero from '../components/PageHero';
-import SectionHeading from '../components/SectionHeading';
-import PlaceholderNotice from '../components/PlaceholderNotice';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, BarChart3, FileText, CheckCircle2 } from "lucide-react";
+import PageHero from "../components/PageHero";
+import SectionHeading from "../components/SectionHeading";
+import PlaceholderNotice from "../components/PlaceholderNotice";
+import impactImage from "../assets/images/young_innovators_impact_1791935608989.jpg";
 
 export default function ImpactPage() {
-  const impactImage = "/src/assets/images/young_innovators_impact_1791935608989.jpg";
-
   return (
     <div className="bg-stone-50">
-      
       {/* 1. PAGE HERO */}
       <PageHero
         kicker="Impact"
         title="Grounded Accountability Over Vanity Metrics"
         description="We evaluate real human outcomes: self-authored life plans, durable peer circles, and long-term momentum."
-        breadcrumbs={[{ label: 'Impact' }]}
+        breadcrumbs={[{ label: "Impact" }]}
       />
 
       {/* 2. OUR EVALUATION PILLARS */}
       <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
             <div className="lg:col-span-6 space-y-4">
               <SectionHeading
                 kicker="Measurement"
@@ -35,32 +32,52 @@ export default function ImpactPage() {
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">1. Actionable Life Blueprints</strong>
-                    <span className="text-stone-600 text-xs sm:text-sm">Does the participant produce a realistic 1–3 year plan during camp?</span>
+                    <strong className="text-stone-900 block">
+                      1. Actionable Life Blueprints
+                    </strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">
+                      Does the participant produce a realistic 1–3 year plan
+                      during camp?
+                    </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">2. Peer Circle Cohesion</strong>
-                    <span className="text-stone-600 text-xs sm:text-sm">Are peer accountability trios still actively meeting after 90 and 180 days?</span>
+                    <strong className="text-stone-900 block">
+                      2. Peer Circle Cohesion
+                    </strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">
+                      Are peer accountability trios still actively meeting after
+                      90 and 180 days?
+                    </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">3. Career & Vocational Leaps</strong>
-                    <span className="text-stone-600 text-xs sm:text-sm">Have participants applied for internships or ambitious goals previously out of reach?</span>
+                    <strong className="text-stone-900 block">
+                      3. Career & Vocational Leaps
+                    </strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">
+                      Have participants applied for internships or ambitious
+                      goals previously out of reach?
+                    </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-stone-900 block">4. Community Leadership</strong>
-                    <span className="text-stone-600 text-xs sm:text-sm">Are alumni taking active responsibility in their local institutions?</span>
+                    <strong className="text-stone-900 block">
+                      4. Community Leadership
+                    </strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">
+                      Are alumni taking active responsibility in their local
+                      institutions?
+                    </span>
                   </div>
                 </div>
               </div>
@@ -76,7 +93,6 @@ export default function ImpactPage() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -84,7 +100,6 @@ export default function ImpactPage() {
       {/* 3. FOUR STAGE PARTICIPANT JOURNEY */}
       <section className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <SectionHeading
             kicker="Lifecycle"
             title="The Participant Journey"
@@ -94,38 +109,55 @@ export default function ImpactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
             <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 01</span>
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 01
+              </span>
               <h4 className="font-bold text-stone-950 text-sm">Selection</h4>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Evaluating curiosity, hunger for growth, and readiness for honest self-reflection.
+                Evaluating curiosity, hunger for growth, and readiness for
+                honest self-reflection.
               </p>
             </div>
 
             <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 02</span>
-              <h4 className="font-bold text-stone-950 text-sm">Residential Camp</h4>
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 02
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">
+                Residential Camp
+              </h4>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Four days of high-focus masterclasses, mentor dialogues, and roadmap crafting.
+                Four days of high-focus masterclasses, mentor dialogues, and
+                roadmap crafting.
               </p>
             </div>
 
             <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 03</span>
-              <h4 className="font-bold text-stone-950 text-sm">Accountability Trios</h4>
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 03
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">
+                Accountability Trios
+              </h4>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Quarterly peer check-ins assessing personal execution against blueprint goals.
+                Quarterly peer check-ins assessing personal execution against
+                blueprint goals.
               </p>
             </div>
 
             <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 04</span>
-              <h4 className="font-bold text-stone-950 text-sm">Multiplier Impact</h4>
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 04
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">
+                Multiplier Impact
+              </h4>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Alumni returning as junior mentors, workshop leaders, or launching community initiatives.
+                Alumni returning as junior mentors, workshop leaders, or
+                launching community initiatives.
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -149,7 +181,8 @@ export default function ImpactPage() {
                 Pre- and Post-Camp Evaluation
               </h4>
               <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                Participants complete self-efficacy, career clarity, and financial literacy benchmarks before and after the retreat.
+                Participants complete self-efficacy, career clarity, and
+                financial literacy benchmarks before and after the retreat.
               </p>
               <PlaceholderNotice
                 label="Pilot Cohort Outcomes"
@@ -166,7 +199,8 @@ export default function ImpactPage() {
                 Annual Impact & Financial Stewardship Report
               </h4>
               <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                Full documentation of scholarships disbursed, donor funds utilized, and qualitative alumni trajectories.
+                Full documentation of scholarships disbursed, donor funds
+                utilized, and qualitative alumni trajectories.
               </p>
               <PlaceholderNotice
                 label="Annual Report"
@@ -184,7 +218,8 @@ export default function ImpactPage() {
             Support Rigorous Youth Transformation
           </h2>
           <p className="text-stone-300 text-sm leading-relaxed">
-            Collaborate as an evaluation partner, underwrite scholarship cohorts, or open job pipelines.
+            Collaborate as an evaluation partner, underwrite scholarship
+            cohorts, or open job pipelines.
           </p>
           <div className="pt-2 flex justify-center">
             <Link
@@ -197,7 +232,6 @@ export default function ImpactPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

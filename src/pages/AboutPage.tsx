@@ -4,11 +4,9 @@ import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import PlaceholderNotice from "../components/PlaceholderNotice";
 import { siteConfig } from "../data/siteConfig";
+import mentorshipImage from "../assets/images/mentorship_collaboration_1791935608626.jpg";
 
 export default function AboutPage() {
-  const mentorshipImage =
-    "/src/assets/images/mentorship_collaboration_1791935608626.jpg";
-  const youthImage = "/src/assets/images/hero_thrive_youth_1791935607522.jpg";
 
   return (
     <div className="bg-stone-50">
