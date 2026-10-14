@@ -1,32 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, CheckCircle2, Compass, Users, Sparkles } from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
-import { siteConfig } from '../data/siteConfig';
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  Compass,
+  Users,
+  Sparkles,
+} from "lucide-react";
+import SectionHeading from "../components/SectionHeading";
+import { siteConfig } from "../data/siteConfig";
+import heroImage from "../assets/images/hero_thrive_youth_1791935607522.jpg";
+import thrive20Image from "../assets/images/thrive20_residential_camp_1791935607590.jpg";
+import nslcImage from "../assets/images/students_leadership_conference_1791935607993.jpg";
+import mentorshipImage from "../assets/images/mentorship_collaboration_1791935608626.jpg";
 
 export default function HomePage() {
-  const heroImage = "/src/assets/images/hero_thrive_youth_1791935607522.jpg";
-  const thrive20Image = "/src/assets/images/thrive20_residential_camp_1791935607590.jpg";
-  const nslcImage = "/src/assets/images/students_leadership_conference_1791935607993.jpg";
-  const mentorshipImage = "/src/assets/images/mentorship_collaboration_1791935608626.jpg";
-
   return (
     <div className="bg-stone-50">
-      
       {/* 1. HERO SECTION */}
       <section className="relative pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            
             {/* Left: Punchy Headline & Immediate CTAs */}
             <div className="lg:col-span-7 space-y-5">
-              
               <div className="flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-[#D96D14]">
                 <span>Youth Development</span>
-                <span aria-hidden="true" className="text-stone-300">·</span>
+                <span aria-hidden="true" className="text-stone-300">
+                  ·
+                </span>
                 <span>Transformative Camps</span>
-                <span aria-hidden="true" className="text-stone-300">·</span>
+                <span aria-hidden="true" className="text-stone-300">
+                  ·
+                </span>
                 <span>Lifelong Networks</span>
               </div>
 
@@ -35,7 +40,9 @@ export default function HomePage() {
               </h1>
 
               <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-xl text-balance">
-                Thrive Culture connects young people with ideas, skills, mentors, and immersive residential camps that turn curiosity into real-world momentum.
+                Thrive Culture connects young people with ideas, skills,
+                mentors, and immersive residential camps that turn curiosity
+                into real-world momentum.
               </p>
 
               {/* Action Buttons */}
@@ -58,19 +65,24 @@ export default function HomePage() {
               {/* Key Highlights Strip */}
               <div className="pt-5 border-t border-stone-200 grid grid-cols-3 gap-3 text-xs">
                 <div>
-                  <span className="block font-bold text-stone-950 text-sm">Parent Body</span>
+                  <span className="block font-bold text-stone-950 text-sm">
+                    Parent Body
+                  </span>
                   <span className="text-stone-500">Long-term vision</span>
                 </div>
                 <div>
-                  <span className="block font-bold text-stone-950 text-sm">Thrive 20</span>
+                  <span className="block font-bold text-stone-950 text-sm">
+                    Thrive 20
+                  </span>
                   <span className="text-stone-500">4-day flagship camp</span>
                 </div>
                 <div>
-                  <span className="block font-bold text-stone-950 text-sm">Intimate Cohorts</span>
+                  <span className="block font-bold text-stone-950 text-sm">
+                    Intimate Cohorts
+                  </span>
                   <span className="text-stone-500">25–30 participants</span>
                 </div>
               </div>
-
             </div>
 
             {/* Right: Hero Image */}
@@ -85,13 +97,13 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3.5 left-4 right-4 text-white text-xs">
                   <p className="font-bold">Real Collaboration</p>
-                  <p className="text-stone-300 text-xs">Building agency, problem solving, and confidence.</p>
+                  <p className="text-stone-300 text-xs">
+                    Building agency, problem solving, and confidence.
+                  </p>
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
@@ -99,7 +111,6 @@ export default function HomePage() {
       <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
             <div className="lg:col-span-6 space-y-4">
               <SectionHeading
                 kicker="Why We Exist"
@@ -108,7 +119,10 @@ export default function HomePage() {
               />
 
               <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-                We are an umbrella organisation that creates high-impact residential camps, student conferences, and direct connections to mentors. Our mission is simple: replace passive drift with purposeful direction.
+                We are an umbrella organisation that creates high-impact
+                residential camps, student conferences, and direct connections
+                to mentors. Our mission is simple: replace passive drift with
+                purposeful direction.
               </p>
 
               <div className="pt-2">
@@ -132,30 +146,44 @@ export default function HomePage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-stone-900">Exposure First: </span>
-                      <span className="text-stone-600">You can’t aspire to what you haven’t seen. We bring real mentors into the room.</span>
+                      <span className="font-bold text-stone-900">
+                        Exposure First:{" "}
+                      </span>
+                      <span className="text-stone-600">
+                        You can’t aspire to what you haven’t seen. We bring real
+                        mentors into the room.
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-stone-900">Practical Skills: </span>
-                      <span className="text-stone-600">No generic hype. We focus on decision-making, financial literacy, and communication.</span>
+                      <span className="font-bold text-stone-900">
+                        Practical Skills:{" "}
+                      </span>
+                      <span className="text-stone-600">
+                        No generic hype. We focus on decision-making, financial
+                        literacy, and communication.
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-bold text-stone-900">Lifelong Peer Coalitions: </span>
-                      <span className="text-stone-600">Bonds forged during our residential retreats last long after camps wrap.</span>
+                      <span className="font-bold text-stone-900">
+                        Lifelong Peer Coalitions:{" "}
+                      </span>
+                      <span className="text-stone-600">
+                        Bonds forged during our residential retreats last long
+                        after camps wrap.
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -163,7 +191,6 @@ export default function HomePage() {
       {/* 3. FEATURED INITIATIVES */}
       <section className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <SectionHeading
               kicker="Programmes"
@@ -180,7 +207,6 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            
             {/* Card 1: Thrive 20 Camp (Flagship) */}
             <div className="bg-white rounded-xl border border-stone-200 overflow-hidden shadow-xs flex flex-col justify-between group h-full hover:border-[#FED7B2] transition-colors">
               <div>
@@ -210,7 +236,10 @@ export default function HomePage() {
                   </h3>
 
                   <p className="text-stone-600 text-sm leading-relaxed">
-                    An intensive four-day residential retreat for young people entering their twenties. Designed to build clarity, practical life skills, meaningful networks, and a concrete personal roadmap.
+                    An intensive four-day residential retreat for young people
+                    entering their twenties. Designed to build clarity,
+                    practical life skills, meaningful networks, and a concrete
+                    personal roadmap.
                   </p>
                 </div>
               </div>
@@ -259,7 +288,9 @@ export default function HomePage() {
                   </h3>
 
                   <p className="text-stone-600 text-sm leading-relaxed">
-                    A nationwide gathering cultivating student leadership, civic agency, and cross-campus collaboration among emerging campus pioneers.
+                    A nationwide gathering cultivating student leadership, civic
+                    agency, and cross-campus collaboration among emerging campus
+                    pioneers.
                   </p>
                 </div>
               </div>
@@ -278,16 +309,13 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-
           </div>
-
         </div>
       </section>
 
       {/* 4. PHILOSOPHY IN 5 CLEAN CARDS */}
       <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-7">
               <SectionHeading
@@ -324,14 +352,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* 5. IMPACT PREVIEW */}
       <section className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <SectionHeading
             kicker="Accountability"
             title="Measured by Real Outcomes"
@@ -342,25 +368,34 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
             <div className="p-5 bg-white rounded-lg border border-stone-200 space-y-2">
               <Compass className="w-5 h-5 text-[#F28524]" />
-              <h3 className="font-bold text-stone-950 text-sm">Actionable Blueprints</h3>
+              <h3 className="font-bold text-stone-950 text-sm">
+                Actionable Blueprints
+              </h3>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Every cohort participant crafts a concrete 1–3 year plan covering career, habits, and skills.
+                Every cohort participant crafts a concrete 1–3 year plan
+                covering career, habits, and skills.
               </p>
             </div>
 
             <div className="p-5 bg-white rounded-lg border border-stone-200 space-y-2">
               <Users className="w-5 h-5 text-[#F28524]" />
-              <h3 className="font-bold text-stone-950 text-sm">Accountability Trios</h3>
+              <h3 className="font-bold text-stone-950 text-sm">
+                Accountability Trios
+              </h3>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Small peer circles maintain quarterly check-ins on execution after the residential retreat.
+                Small peer circles maintain quarterly check-ins on execution
+                after the residential retreat.
               </p>
             </div>
 
             <div className="p-5 bg-white rounded-lg border border-stone-200 space-y-2">
               <Sparkles className="w-5 h-5 text-[#F28524]" />
-              <h3 className="font-bold text-stone-950 text-sm">Transparent Reporting</h3>
+              <h3 className="font-bold text-stone-950 text-sm">
+                Transparent Reporting
+              </h3>
               <p className="text-stone-600 text-xs leading-relaxed">
-                Pilot cohort evaluation data and verified outcomes are documented openly.
+                Pilot cohort evaluation data and verified outcomes are
+                documented openly.
               </p>
             </div>
           </div>
@@ -374,7 +409,6 @@ export default function HomePage() {
               <ArrowRight className="w-3.5 h-3.5 text-[#F28524]" />
             </Link>
           </div>
-
         </div>
       </section>
 
@@ -382,7 +416,6 @@ export default function HomePage() {
       <section className="py-16 bg-stone-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
             <div className="lg:col-span-7 space-y-4">
               <p className="text-xs font-bold uppercase tracking-wider text-[#F28524]">
                 Collaborate With Us
@@ -391,7 +424,9 @@ export default function HomePage() {
                 Help Us Expand Possibilities For The Next Generation.
               </h2>
               <p className="text-stone-300 text-sm sm:text-base leading-relaxed max-w-lg">
-                We partner with foundations, retreat centers, industry leaders, and universities to provide scholarships, venues, and mentorship.
+                We partner with foundations, retreat centers, industry leaders,
+                and universities to provide scholarships, venues, and
+                mentorship.
               </p>
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
@@ -417,27 +452,36 @@ export default function HomePage() {
               <ul className="space-y-2 text-xs text-stone-300">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F28524]" />
-                  <span><strong>Funding:</strong> Underwrite participant camp scholarships</span>
+                  <span>
+                    <strong>Funding:</strong> Underwrite participant camp
+                    scholarships
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F28524]" />
-                  <span><strong>Venues:</strong> Host residential retreats and summits</span>
+                  <span>
+                    <strong>Venues:</strong> Host residential retreats and
+                    summits
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F28524]" />
-                  <span><strong>Knowledge:</strong> Lead masterclasses as mentors</span>
+                  <span>
+                    <strong>Knowledge:</strong> Lead masterclasses as mentors
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#F28524]" />
-                  <span><strong>Opportunities:</strong> Offer internships & shadowing</span>
+                  <span>
+                    <strong>Opportunities:</strong> Offer internships &
+                    shadowing
+                  </span>
                 </li>
               </ul>
             </div>
-
           </div>
         </div>
       </section>
-
     </div>
   );
 }

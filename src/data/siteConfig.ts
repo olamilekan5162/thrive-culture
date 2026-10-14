@@ -70,7 +70,7 @@ export const siteConfig = {
         "A four-day residential retreat for young people entering their twenties to gain clarity, build practical life skills, and create a concrete personal roadmap.",
       fullDescription:
         "Entering your twenties is life's most defining transition. Thrive 20 Camp brings 25–30 young adults together in a distraction-free setting to build durable habits, examine their ambitions, and forge lasting peer bonds.",
-      image: "/src/assets/images/thrive20_residential_camp_1791935607590.jpg",
+      image: "../assets/images/thrive20_residential_camp_1791935607590.jpg",
       cohortDetails: {
         duration: "4 Days / 3 Nights",
         pilotTarget: "25–30 Participants",
@@ -119,7 +119,7 @@ export const siteConfig = {
       fullDescription:
         "NSLC unites campus pioneers across universities and schools for intensive working labs, dialogue with seasoned leaders, and cross-institutional problem-solving.",
       image:
-        "/src/assets/images/students_leadership_conference_1791935607993.jpg",
+        "../assets/images/students_leadership_conference_1791935607993.jpg",
       cohortDetails: {
         duration: "Multi-Day Summit",
         pilotTarget: "Campus & Student Delegates",
