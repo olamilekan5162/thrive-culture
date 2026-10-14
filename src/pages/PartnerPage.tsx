@@ -13,12 +13,12 @@ export default function PartnerPage() {
     message: '',
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitDetails, setSubmitDetails] = useState(null);
 
   const validate = () => {
-    const errs = {};
+    const errs: any = {};
     if (!formData.name.trim()) errs.name = 'Please provide your full name.';
     if (!formData.organisation.trim()) errs.organisation = 'Please provide your organisation.';
     if (!formData.email.trim()) {
