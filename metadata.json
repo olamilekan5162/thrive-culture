@@ -1,0 +1,6 @@
+{
+  "name": "Thrive Culture",
+  "description": "Helping young people expand their possibilities through exposure to transformative ideas, skills, experiences, and meaningful networks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

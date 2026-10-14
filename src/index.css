@@ -1,41 +1,63 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
-  --color-canvas: #faf9f6;
-  --color-ink: #121316;
-  --color-warm-stone: #efece6;
-  --color-accent-terracotta: #d35400;
-  --color-accent-amber: #d97706;
-  --color-accent-pine: #1f3a2e;
-}
-
 @layer base {
+  :root {
+    --color-brand: #f28524;
+    --color-brand-dark: #d96d14;
+    --color-brand-light: #fff5ec;
+    --color-brand-muted: #fde8d4;
+  }
+
   html {
-    scroll-behavior: smooth;
-    font-family: var(--font-sans);
+    font-family:
+      "Plus Jakarta Sans",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      sans-serif;
   }
-
-  h1,
-  h2,
-  h3,
-  .font-editorial {
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  }
 }
 
-/* Custom subtle scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Custom utility for subtle text balance */
+.text-balance {
+  text-wrap: balance;
 }
-::-webkit-scrollbar-track {
-  background: #faf9f6;
+
+/* Custom Brand Utilities */
+.text-brand {
+  color: #f28524;
 }
-::-webkit-scrollbar-thumb {
-  background: #d5cebe;
-  border-radius: 4px;
+
+.text-brand-dark {
+  color: #d96d14;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #b8b09f;
+
+.bg-brand {
+  background-color: #f28524;
+}
+
+.bg-brand:hover {
+  background-color: #de7519;
+}
+
+.bg-brand-light {
+  background-color: #fff5ec;
+}
+
+.border-brand {
+  border-color: #f28524;
+}
+
+.border-brand-subtle {
+  border-color: #fed7b2;
+}
+
+.focus-ring-brand:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #f28524;
 }

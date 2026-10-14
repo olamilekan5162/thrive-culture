@@ -1,392 +1,338 @@
-export interface Initiative {
-  id: string;
-  name: string;
-  subheading: string;
-  flagship: boolean;
-  status: "Applications Open" | "Upcoming Cohort" | "Concept Phase";
-  dates: string;
-  targetAudience: string;
-  cohortSize: string;
-  purpose: string;
-  problem: string;
-  experienceDescription: string;
-  pillars: {
-    title: string;
-    description: string;
-    focus: string;
-  }[];
-  eligibility: string[];
-  selectionCriteria: string[];
-  ctaText: string;
-  image?: string;
-}
+/**
+ * Central Configuration for Thrive Culture
+ * Crisp, streamlined content with #F28524 brand identity.
+ */
 
-export interface PartnerTrack {
-  id: string;
-  title: string;
-  description: string;
-  involves: string[];
-  idealFor: string;
-}
+export const siteConfig = {
+  orgName: "Thrive Culture",
+  tagline: "Helping Young People See Beyond What's Possible",
+  description:
+    "Thrive Culture connects young people with ideas, skills, mentors, and networks that expand what their lives can become.",
 
-export interface Story {
-  id: string;
-  title: string;
-  category:
-    | "Stories"
-    | "Reflections"
-    | "Programme Updates"
-    | "Participant Voices"
-    | "Thought Leadership";
-  readTime: string;
-  date: string;
-  excerpt: string;
-  content: string[];
-  quote?: string;
-  author: string;
-  role: string;
-  image?: string;
-}
+  // Concise Vision & Mission Placeholders
+  statements: {
+    vision: {
+      isOfficial: false,
+      placeholderText:
+        "A world where every young person has the exposure, agency, and community to build an extraordinary life.",
+      note: "Official vision statement will be supplied by Thrive Culture leadership.",
+    },
+    mission: {
+      isOfficial: false,
+      placeholderText:
+        "To connect emerging generations with transformative mentors, practical skill camps, and enduring peer circles that turn potential into reality.",
+      note: "Official mission statement will be supplied by Thrive Culture leadership.",
+    },
+  },
 
-export interface FAQItem {
-  question: string;
-  answer: string;
-  category?: "General" | "Eligibility" | "Camp Life" | "Post-Camp";
-}
+  // Core philosophy pillars (Snappy, punchy, memorable)
+  philosophy: [
+    {
+      number: "01",
+      title: "Intentional Exposure",
+      description:
+        "You cannot aim for what you have never seen. We introduce young minds to diverse professions, creators, and ways of thinking.",
+    },
+    {
+      number: "02",
+      title: "Practical Skills",
+      description:
+        "Action beats passive inspiration. We teach real-world execution: decision-making, financial basics, and communication.",
+    },
+    {
+      number: "03",
+      title: "Meaningful Networks",
+      description:
+        "Proximity changes outcomes. We surround participants with ambitious peers and mentors who raise their standards.",
+    },
+    {
+      number: "04",
+      title: "Personal Agency",
+      description:
+        "We build inner ownership. Participants learn to stop drifting and take active charge of their choices and trajectory.",
+    },
+    {
+      number: "05",
+      title: "Immersive Camps",
+      description:
+        "Stepping away from daily distraction creates space for deep clarity, honest reflection, and lifelong friendships.",
+    },
+  ],
 
-export const SITE_CONFIG = {
-  organizationName: "Mirroring Possibilities",
-  tagline:
-    "Expanding the imagination of young people by connecting them to what is possible.",
-  mission:
-    "To help young people see beyond the limitations of their immediate environment by bringing them closer to people, ideas, skills, and experiences that expand their imagination of what their lives can become.",
-  vision:
-    "A world where a young person’s future is shaped by their boundless potential, thoughtful guidance, and real-world exposure—never constrained by zip code or circumstance.",
+  // Initiatives within the Thrive Culture ecosystem
+  initiatives: [
+    {
+      id: "thrive-20-camp",
+      title: "Thrive 20 Camp",
+      badge: "Flagship Programme",
+      isFlagship: true,
+      summary:
+        "A four-day residential retreat for young people entering their twenties to gain clarity, build practical life skills, and create a concrete personal roadmap.",
+      fullDescription:
+        "Entering your twenties is life's most defining transition. Thrive 20 Camp brings 25–30 young adults together in a distraction-free setting to build durable habits, examine their ambitions, and forge lasting peer bonds.",
+      image: "/src/assets/images/thrive20_residential_camp_1791935607590.jpg",
+      cohortDetails: {
+        duration: "4 Days / 3 Nights",
+        pilotTarget: "25–30 Participants",
+        format: "Residential Retreat",
+        location: "Announced to Admitted Cohort",
+      },
+      applicationUrl:
+        "https://docs.google.com/forms/d/1iNq2dtTLsrXk5U0kAoT5Nyf1zmN3pwDfWKp2LJLeElg/edit",
+      applicationConfigNote: "Configurable Google Form application link.",
+      lifeFramework: {
+        isOfficial: false,
+        placeholderText:
+          "The Thrive 20 Life Framework provides a clear mental compass across four key pillars: Self-Mastery, Practical Skills, Financial Health, and Relationship Standards.",
+        note: "Official curriculum framework document will be integrated upon confirmation.",
+      },
+      faqs: [
+        {
+          question: "What is Thrive 20 Camp?",
+          answer:
+            "A four-day residential experience where young people entering their twenties pause, reflect, learn practical life skills from mentors, and author a clear personal roadmap.",
+        },
+        {
+          question: "Who should apply?",
+          answer:
+            "Curious, ambitious young adults (typically ages 19–23) who want clarity, better habits, and a high-standard peer group.",
+        },
+        {
+          question: "Why only 25–30 participants?",
+          answer:
+            "To guarantee deep conversations, personal attention from mentors, and close cohort trust.",
+        },
+        {
+          question: "What happens after the camp?",
+          answer:
+            "Participants leave with an actionable personal plan and join peer accountability circles that continue meeting after the retreat.",
+        },
+      ],
+    },
+    {
+      id: "nslc",
+      title: "National Students Leadership Conference",
+      badge: "National Initiative",
+      isFlagship: false,
+      summary:
+        "A nationwide summit bringing student leaders together to tackle institutional innovation, civic governance, and youth-led initiatives.",
+      fullDescription:
+        "NSLC unites campus pioneers across universities and schools for intensive working labs, dialogue with seasoned leaders, and cross-institutional problem-solving.",
+      image:
+        "/src/assets/images/students_leadership_conference_1791935607993.jpg",
+      cohortDetails: {
+        duration: "Multi-Day Summit",
+        pilotTarget: "Campus & Student Delegates",
+        format: "Plenary & Working Labs",
+        location: "Central Venue",
+      },
+      note: "Dates and partner host campuses are currently being finalized.",
+    },
+  ],
 
-  // Single configurable Google Form link for applications
-  applicationFormUrl:
-    "https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder-mirroring-possibilities/viewform",
+  // 6 Partnership Categories (Clean & scannable)
+  partnerships: [
+    {
+      id: "funding",
+      number: "01",
+      title: "Funding Partner",
+      role: "Capital & Scholarships",
+      description:
+        "Underwrite participant scholarships so finances never block a deserving young person from attending.",
+      offerings: [
+        "Participant scholarship underwriting",
+        "Camp operational funding",
+        "Micro-seed grants for participant projects",
+      ],
+    },
+    {
+      id: "venue",
+      number: "02",
+      title: "Venue Partner",
+      role: "Retreat Facilities",
+      description:
+        "Provide serene retreat spaces, lodges, or campus facilities for immersive four-day camps.",
+      offerings: [
+        "Residential retreat venues for Thrive 20",
+        "Conference auditoriums for student summits",
+        "Breakout workshop rooms",
+      ],
+    },
+    {
+      id: "knowledge",
+      number: "03",
+      title: "Knowledge Partner",
+      role: "Mentors & Facilitators",
+      description:
+        "Contribute real-world expertise, guest masterclasses, and executive mentorship.",
+      offerings: [
+        "Guest masterclasses & clinics",
+        "Practical workshop facilitation",
+        "One-on-one cohort mentoring",
+      ],
+    },
+    {
+      id: "opportunity",
+      number: "04",
+      title: "Opportunity Partner",
+      role: "Jobs & Internships",
+      description:
+        "Open doors to internships, apprenticeships, and shadowing opportunities for cohort alumni.",
+      offerings: [
+        "Curated internships & fellowships",
+        "Shadow-a-Leader workplace days",
+        "Direct talent pipeline access",
+      ],
+    },
+    {
+      id: "media",
+      number: "05",
+      title: "Media Partner",
+      role: "Storytelling & Reach",
+      description:
+        "Help document cohort stories, broadcast youth perspectives, and amplify our mission.",
+      offerings: [
+        "Documentary & photo coverage",
+        "Editorial spotlights & features",
+        "Media distribution & podcasts",
+      ],
+    },
+    {
+      id: "strategic",
+      number: "06",
+      title: "Strategic Partner",
+      role: "Long-Term Alliance",
+      description:
+        "Collaborate with universities, foundations, or civic bodies for regional and national scale.",
+      offerings: [
+        "Multi-year programmatic alliance",
+        "Joint youth research & data",
+        "Institutional accreditation",
+      ],
+    },
+  ],
 
-  // Contact placeholders
-  contactEmail: "contact@mirroringpossibilities.org",
-  partnershipsEmail: "partners@mirroringpossibilities.org",
-  phonePlaceholder: "+1 (555) 019-2026 [Contact number to be announced]",
-  locationPlaceholder: "Global Initiative / Regional Cohorts",
+  // Core Values (Concise)
+  coreValues: [
+    {
+      title: "Radical Possibility",
+      description:
+        "We refuse to let zip codes or current circumstances limit a young person's future.",
+    },
+    {
+      title: "High Standards",
+      description:
+        "Our camps, mentors, and environments reflect excellence, care, and dignity.",
+    },
+    {
+      title: "Authentic Community",
+      description:
+        "Real growth happens in high-trust spaces where people can be honest and ambitious.",
+    },
+    {
+      title: "Action Over Talk",
+      description:
+        "No empty motivational slogans. Everything translates into real habits and decisions.",
+    },
+  ],
 
-  socials: [
-    { label: "LinkedIn", url: "https://linkedin.com" },
-    { label: "X (Twitter)", url: "https://x.com" },
-    { label: "Instagram", url: "https://instagram.com" },
-    { label: "YouTube", url: "https://youtube.com" },
+  // Team Structure
+  team: [
+    {
+      role: "Executive Leadership",
+      title: "Founder & Executive Director",
+      name: "Announcement Pending",
+      isPlaceholder: true,
+      bio: "Official leadership announcement will be shared upon public launch.",
+    },
+    {
+      role: "Programmes & Experience",
+      title: "Director of Programmes",
+      name: "Appointment in Progress",
+      isPlaceholder: true,
+      bio: "Leading cohort curriculum design and residential operations for Thrive 20.",
+    },
+    {
+      role: "Partnerships & Impact",
+      title: "Head of Partnerships",
+      name: "Appointment in Progress",
+      isPlaceholder: true,
+      bio: "Coordinating institutional donors, venue partners, and corporate alliances.",
+    },
+  ],
+
+  // Verified Contact Details
+  contact: {
+    officialEmail: "hello@thriveculture.org",
+    partnershipsEmail: "partnerships@thriveculture.org",
+    admissionsEmail: "admissions@thriveculture.org",
+    officeLocation: "Regional hubs and retreat locations announced per cohort",
+    channels: [
+      {
+        name: "General Inquiries",
+        address: "hello@thriveculture.org",
+        note: "General questions & correspondence",
+      },
+      {
+        name: "Partnership Desk",
+        address: "partnerships@thriveculture.org",
+        note: "Funding, venues, & mentorship",
+      },
+      {
+        name: "Admissions Desk",
+        address: "admissions@thriveculture.org",
+        note: "Thrive 20 Camp cohort applications",
+      },
+    ],
+    socials: [
+      {
+        platform: "LinkedIn",
+        url: "https://linkedin.com/company/thrive-culture-placeholder",
+        isPlaceholder: true,
+      },
+      {
+        platform: "Twitter / X",
+        url: "https://x.com/thriveculture_placeholder",
+        isPlaceholder: true,
+      },
+      {
+        platform: "Instagram",
+        url: "https://instagram.com/thriveculture_placeholder",
+        isPlaceholder: true,
+      },
+    ],
+  },
+
+  // Journal / Updates Structure
+  stories: [
+    {
+      id: "architecture-of-possibility",
+      title: "The Power of Exposure: Why Proximity Changes Everything",
+      category: "Perspective",
+      date: "October 2026",
+      readTime: "3 min read",
+      author: "Thrive Culture Editorial",
+      summary:
+        "How meeting real-world practitioners transforms what young people consider possible for their own lives.",
+      body: [
+        "When young people only see a narrow set of career paths around them, their dreams naturally fit inside that box.",
+        "Exposure breaks that box. By placing a nineteen-year-old in conversation with builders, founders, and civic leaders, the invisible barrier between 'their world' and 'my world' disappears.",
+        "Thrive 20 Camp was created on this conviction: four immersive days can spark forty years of purposeful momentum.",
+      ],
+    },
+    {
+      id: "navigating-the-twenties",
+      title: "Stepping Into Your Twenties: Why You Need a Framework",
+      category: "Programme Design",
+      date: "September 2026",
+      readTime: "3 min read",
+      author: "Advisory Team",
+      summary:
+        "The shift from school to adult life is wide open. Having a clear compass makes all the difference.",
+      body: [
+        "In school, the syllabus is given to you. In your twenties, the syllabus vanishes. You have to decide what to value, what habits to build, and who to spend time with.",
+        "At Thrive 20 Camp, we give participants the space and tools to create their own playbook—grounded in personal values, financial literacy, and strong peer accountability.",
+      ],
+    },
   ],
 };
-
-export const INITIATIVES: Initiative[] = [
-  {
-    id: "thrive-20",
-    name: "Thrive 20 Camp",
-    subheading: "Plan Twenty Flagship Residential Experience",
-    flagship: true,
-    status: "Applications Open",
-    dates: "Four-day immersive residential camp [Dates to be finalized]",
-    targetAudience: "Young people turning 20 within the camp year",
-    cohortSize: "Pilot target: 25–30 participants",
-    purpose:
-      "A high-impact, transformative threshold experience designed to equip young people entering their twenties with life clarity, practical tools, human empowerment, meaningful networks, and an actionable life plan.",
-    problem:
-      "Turning twenty marks an inflection point where societal expectations soar, yet supportive structure abruptly drops off. Many young people navigate critical career, financial, and personal decisions with minimal exposure to diverse life pathways, mentorship, or structured life design.",
-    experienceDescription:
-      "A carefully curated four-day residential immersion away from everyday distractions. Combining masterclasses, candid mentor firesides, experiential simulations, peer accountability circles, and intensive personal life planning.",
-    pillars: [
-      {
-        title: "Clarity & Self-Discovery",
-        description:
-          "Uncovering personal core values, authentic strengths, and internal compass before adopting external societal pressures.",
-        focus: "Identity, strengths assessment, vision mapping",
-      },
-      {
-        title: "Practical Capabilities",
-        description:
-          "Real-world competencies often omitted from formal schooling—financial fundamentals, decision frameworks, and communication.",
-        focus: "Financial literacy, strategic thinking, effective agency",
-      },
-      {
-        title: "Human Empowerment & Resilience",
-        description:
-          "Cultivating emotional agility, internal agency, mindset reframing, and the courage to take informed, purposeful risks.",
-        focus: "Mental models, emotional health, grit",
-      },
-      {
-        title: "Curated Networks & Mentorship",
-        description:
-          "Direct, candid access to accomplished professionals, peers, and mentors who model what is genuinely achievable.",
-        focus: "Intergenerational wisdom, peer circles, guidance",
-      },
-      {
-        title: "Actionable Life Blueprint",
-        description:
-          "Translating aspirations into concrete 1-year and 3-year execution frameworks with milestone tracking and peer accountability.",
-        focus: "Action plan, accountability partners, milestones",
-      },
-    ],
-    eligibility: [
-      "Must be turning 20 years old within the camp year (strict threshold cohort)",
-      "Demonstrated curiosity, openness to growth, and willingness to engage deeply with peers",
-      "Commitment to participate in the entire 4-day residential experience and post-camp circle",
-      "No specific university degree or prerequisite career path required—we value diversity of perspective",
-    ],
-    selectionCriteria: [
-      "Authentic self-reflection and clarity of personal motivation",
-      "Willingness to support and elevate fellow cohort members",
-      "Desire to build an intentional foundation for the decade ahead",
-    ],
-    ctaText: "Apply for Thrive 20 Cohort",
-  },
-  {
-    id: "possibility-labs",
-    name: "Possibility Labs",
-    subheading: "Future Community Innovation Workshops",
-    flagship: false,
-    status: "Concept Phase",
-    dates: "[Pilot schedule to be announced]",
-    targetAudience:
-      "Secondary and early tertiary youth exploring creative and technological frontiers",
-    cohortSize: "[Cohort sizing to be defined]",
-    purpose:
-      "Hands-on experiential workshops bridging the gap between emerging creative technologies, entrepreneurship, and community challenges.",
-    problem:
-      "Young people in underserved communities rarely get tactile exposure to cutting-edge tools and innovation methodologies before making academic choices.",
-    experienceDescription:
-      "Weekend pop-up labs focusing on rapid prototyping, storytelling, and social problem solving with industry creators.",
-    pillars: [
-      {
-        title: "Applied Creativity",
-        description:
-          "Translating raw imagination into tangible prototypes and digital artifacts.",
-        focus: "Prototyping, design thinking",
-      },
-      {
-        title: "Community Problem-Solving",
-        description:
-          "Addressing localized civic challenges through collective innovation.",
-        focus: "Civic tech, empathy",
-      },
-    ],
-    eligibility: ["[Detailed criteria to be published prior to launch]"],
-    selectionCriteria: ["[Selection framework to be announced]"],
-    ctaText: "Register Interest",
-  },
-  {
-    id: "next-horizon-fellows",
-    name: "Next Horizon Fellowship",
-    subheading: "Alumni Transition & Incubation Support",
-    flagship: false,
-    status: "Upcoming Cohort",
-    dates: "[Post-Thrive 20 pilot rollout]",
-    targetAudience:
-      "Graduates of Mirroring Possibilities initiatives executing social impact projects",
-    cohortSize: "[Target cohort to be announced]",
-    purpose:
-      "Sustained six-month micro-grant and advisory support for young leaders advancing community solutions.",
-    problem:
-      "The momentum of intensive camps can fade without ongoing structural backing and resource access.",
-    experienceDescription:
-      "Bi-weekly advisory check-ins, seed grants, and executive coaching.",
-    pillars: [
-      {
-        title: "Project Incubation",
-        description:
-          "Structured milestones for grassroots community initiatives.",
-        focus: "Execution, grant allocation",
-      },
-      {
-        title: "Executive Advisory",
-        description: "Dedicated 1-on-1 strategic mentorship.",
-        focus: "Leadership maturity",
-      },
-    ],
-    eligibility: ["Completed Thrive 20 or associated foundational programmes"],
-    selectionCriteria: ["Viability and community impact of proposed project"],
-    ctaText: "Learn About the Fellowship",
-  },
-];
-
-export const PARTNERSHIP_TRACKS: PartnerTrack[] = [
-  {
-    id: "funding",
-    title: "Funding & Underwriting Partner",
-    description:
-      "Provide financial underwriting to ensure our initiatives remain accessible regardless of a young person’s socioeconomic background. Directly fund cohort scholarships, camp residency, and curriculum materials.",
-    involves: [
-      "Full or partial cohort scholarships for deserving candidates",
-      "Operational support for residential logistics and learning materials",
-      "Transparent reporting on participant outcomes and post-programme tracking",
-      "Acknowledgement across programme collateral and public records",
-    ],
-    idealFor:
-      "Philanthropic foundations, corporate CSR initiatives, family offices, and individual benefactors.",
-  },
-  {
-    id: "venue",
-    title: "Venue & Retreat Partner",
-    description:
-      "Provide inspiring, safe, and serene residential facilities, retreat grounds, and workshop spaces where young people can disconnect from daily pressures and focus entirely on personal transformation.",
-    involves: [
-      "Access to retreat lodges, conference venues, or campus residential facilities",
-      "Nutritious meal catering and accommodation logistics partnerships",
-      "Conducive environments for reflection, campfires, and team simulations",
-    ],
-    idealFor:
-      "Retreat centers, universities, hospitality groups, eco-lodges, and conference facilities.",
-  },
-  {
-    id: "knowledge",
-    title: "Knowledge & Curriculum Partner",
-    description:
-      "Collaborate on world-class life frameworks, educational content, financial literacy modules, and developmental methodologies tailored to the modern 20-year-old journey.",
-    involves: [
-      "Contributing evidence-based frameworks in youth development and mental wellness",
-      "Curating specialized workshops (e.g. personal finance, public speaking, ethics)",
-      "Co-authoring research or impact evaluation frameworks",
-    ],
-    idealFor:
-      "Academic institutions, behavioural design institutes, think tanks, and training consultancies.",
-  },
-  {
-    id: "opportunity",
-    title: "Opportunity & Career Partner",
-    description:
-      "Open real doors for cohort alumni by offering micro-internships, apprenticeships, shadowing days, and professional exposure inside forward-thinking organisations.",
-    involves: [
-      "Workplace visits and day-in-the-life executive shadowing for young adults",
-      "Internship or junior pathway placements for programme graduates",
-      "Real-world project briefs for alumni challenge sprints",
-    ],
-    idealFor:
-      "Forward-thinking companies, startups, creative agencies, NGOs, and public sector bodies.",
-  },
-  {
-    id: "media",
-    title: "Media & Storytelling Partner",
-    description:
-      "Amplify stories of youth possibility, share documentary coverage of our cohorts, and shift public narratives around young people from deficit to immense promise.",
-    involves: [
-      "Co-producing documentary spotlights, photo essays, and podcast features",
-      "Amplifying participant voices and graduation project outcomes",
-      "Press coverage and distribution across youth and industry channels",
-    ],
-    idealFor:
-      "Media houses, documentary filmmakers, publications, journalists, and content studios.",
-  },
-  {
-    id: "strategic",
-    title: "Strategic & Ecosystem Partner",
-    description:
-      "Join hands on long-term systemic alignment, co-designing regional initiatives, and expanding our reach into new geographies and communities.",
-    involves: [
-      "Cross-organisational referrals and community outreach",
-      "Long-term advisory on scaling model to additional demographics",
-      "Joint policy advocacy for young adult developmental support",
-    ],
-    idealFor:
-      "Youth development coalitions, national youth bodies, and international non-profits.",
-  },
-];
-
-export const STORIES: Story[] = [
-  {
-    id: "why-turning-twenty-matters",
-    title: "Why Turning Twenty is the Most Underestimated Threshold in Life",
-    category: "Thought Leadership",
-    readTime: "5 min read",
-    date: "Autumn 2026",
-    excerpt:
-      "The transition from nineteen to twenty is rarely celebrated with the structural intentionality it demands. Why intentional life architecture at 20 changes the trajectory of a lifetime.",
-    quote:
-      "We spend twelve years preparing young people for exams, but scarcely four days helping them map the architecture of their twenties.",
-    author: "Mirroring Possibilities Research",
-    role: "Editorial Team",
-    content: [
-      "Turning twenty is a subtle yet profound watershed. At eighteen, society legally recognizes adulthood; at twenty-one, celebration often focuses on independence. But the twentieth year is where the true psychological pivot occurs.",
-      "For the first time, young people step out of the teenage decade. The decisions made here—around values, peers, financial habits, mental fortitude, and aspirations—compound over the ensuing thirty years with tremendous force.",
-      "Yet for millions of young adults, this transition occurs in isolation. Mirroring Possibilities was established to build an ecosystem where young people meet mentors and peers who reflect the highest possibilities of what can be accomplished.",
-    ],
-  },
-  {
-    id: "inside-the-four-day-immersion",
-    title: "Designing the 4-Day Sanctuary: Inside the Thrive 20 Experience",
-    category: "Reflections",
-    readTime: "4 min read",
-    date: "Summer 2026",
-    excerpt:
-      "An inside look into the curriculum design, fireside sessions, and contemplative spaces that constitute the flagship Plan Twenty camp.",
-    quote:
-      "When you remove the noise of constant notifications and give twenty young minds space to breathe, clarity ceases to be a luxury.",
-    author: "Programme Facilitation Circle",
-    role: "Curriculum Architecture",
-    content: [
-      "The premise of Thrive 20 is simple: human potential flourishes when provided with a container of deep psychological safety, rigorous tools, and sincere mentors.",
-      "Across four days, participants move through a deliberate sequence: Day 1 grounds them in self-awareness and unlearning; Day 2 introduces practical competencies from decision-making to money; Day 3 connects them with intergenerational mentors; Day 4 outputs their personal life blueprint.",
-      "We do not present a single formula for success. Instead, we equip each individual with the discernment and courage to define their own path.",
-    ],
-  },
-  {
-    id: "ecosystem-of-possibility",
-    title: 'The Philosophy of "Mirroring": Seeing What You Can Become',
-    category: "Stories",
-    readTime: "6 min read",
-    date: "Spring 2026",
-    excerpt:
-      "How intentional exposure to mentors and diverse life trajectories breaks the invisible ceiling of local circumstances.",
-    quote:
-      "You cannot aim for a horizon you have never had the chance to see reflected in another human being.",
-    author: "Mirroring Possibilities Founding Council",
-    role: "Organisational Perspective",
-    content: [
-      "A child raised in an environment where the only visible careers are limited by geography naturally forms aspirations bounded by that horizon.",
-      "Mirroring is not about imitation; it is about visibility. When a 20-year-old meets founders, writers, engineers, community organizers, and ethical leaders who share their vulnerabilities and tradecraft, possibility becomes real.",
-      "By bringing diverse exemplars directly into the lives of young people, we dismantle artificial limitations and ignite self-directed drive.",
-    ],
-  },
-];
-
-export const FAQS: FAQItem[] = [
-  {
-    category: "General",
-    question:
-      "What is the relationship between Mirroring Possibilities and Thrive 20?",
-    answer:
-      "Mirroring Possibilities is the umbrella non-profit organisation committed to expanding horizons for youth. Thrive 20 (also called Plan Twenty) is our flagship 4-day residential camp initiative specifically targeted at young people turning twenty. In the future, Mirroring Possibilities will launch additional initiatives, labs, and campaigns.",
-  },
-  {
-    category: "Eligibility",
-    question: "Who is eligible to apply for the Thrive 20 Camp?",
-    answer:
-      "The current primary eligibility requirement is that applicants must be turning 20 years old within the camp year. We welcome applicants from all academic backgrounds, vocational pursuits, and walks of life. No university enrollment is required.",
-  },
-  {
-    category: "Camp Life",
-    question:
-      "What does the four-day residential camp cost for selected participants?",
-    answer:
-      "Through the generous commitment of our funding and philanthropic partners, participation for selected applicants is subsidized. Full details regarding scholarship allocations, transport stipends, and residential provisions will be confirmed during the candidate selection cycle.",
-  },
-  {
-    category: "Camp Life",
-    question: "What happens during the four days of Thrive 20?",
-    answer:
-      "The camp features an intensive sequence including value-mapping workshops, practical life-skill masterclasses (financial literacy, decision frameworks), candid mentor circles, small-group reflection pods, physical wellness activities, and the drafting of a personal multi-year life plan.",
-  },
-  {
-    category: "Post-Camp",
-    question: "What support is provided after the camp concludes?",
-    answer:
-      "Graduation from the camp is the beginning, not the end. Alumni enter the Possibility Network, receiving ongoing peer accountability check-ins, access to quarterly mentor forums, and eligibility for subsequent fellowship opportunities.",
-  },
-  {
-    category: "General",
-    question: "How does an organisation or mentor get involved?",
-    answer:
-      'We actively invite seasoned practitioners, speakers, and corporate or community partners to join our ecosystem. You can explore partnership pathways on our "Partner With Us" page or register your interest on our "Possibility Network" page.',
-  },
-];

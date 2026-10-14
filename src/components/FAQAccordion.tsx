@@ -1,96 +1,47 @@
-import React, { useState } from "react";
-import { ChevronDown, Plus, Minus } from "lucide-react";
-import type { FAQItem } from "../data/siteConfig";
+import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
-interface FAQAccordionProps {
-  items: FAQItem[];
-  allowFilter?: boolean;
-}
+export default function FAQAccordion({ items = [] }) {
+  const [openIndex, setOpenIndex] = useState(0);
 
-export const FAQAccordion: React.FC<FAQAccordionProps> = ({
-  items,
-  allowFilter = false,
-}) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  const categories = [
-    "All",
-    ...Array.from(new Set(items.map((i) => i.category || "General"))),
-  ];
-
-  const filteredItems =
-    selectedCategory === "All"
-      ? items
-      : items.filter((i) => (i.category || "General") === selectedCategory);
-
-  const toggleItem = (idx: number) => {
+  const toggle = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
   return (
-    <div className="w-full">
-      {allowFilter && categories.length > 1 && (
-        <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-stone-200 pb-4">
-          {categories.map((cat) => (
+    <div className="divide-y divide-stone-200 border-y border-stone-200">
+      {items.map((item, idx) => {
+        const isOpen = openIndex === idx;
+        const id = `faq-item-${idx}`;
+
+        return (
+          <div key={idx} className="py-4 sm:py-5">
             <button
-              key={cat}
               type="button"
-              onClick={() => {
-                setSelectedCategory(cat);
-                setOpenIndex(0);
-              }}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
-                selectedCategory === cat
-                  ? "bg-[#121316] text-white"
-                  : "text-stone-600 bg-stone-100 hover:bg-stone-200"
-              }`}
+              onClick={() => toggle(idx)}
+              aria-expanded={isOpen}
+              aria-controls={id}
+              className="w-full flex items-start justify-between text-left gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-sm"
             >
-              {cat}
+              <span className="text-base sm:text-lg font-semibold text-stone-900 group-hover:text-amber-800 transition-colors">
+                {item.question}
+              </span>
+              <span className="p-1 rounded-md text-stone-500 group-hover:text-stone-900 group-hover:bg-stone-100 transition-all shrink-0 mt-0.5">
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isOpen ? 'rotate-180 text-amber-700' : ''
+                  }`}
+                />
+              </span>
             </button>
-          ))}
-        </div>
-      )}
-
-      <div className="divide-y divide-stone-200 border-t border-b border-stone-200">
-        {filteredItems.map((item, idx) => {
-          const isOpen = openIndex === idx;
-          return (
-            <div key={item.question} className="py-5 transition-colors">
-              <button
-                type="button"
-                onClick={() => toggleItem(idx)}
-                aria-expanded={isOpen}
-                className="w-full flex items-center justify-between gap-4 text-left group focus-visible:outline-2 focus-visible:outline-[#D35400] rounded-sm"
-              >
-                <div className="flex items-center gap-3">
-                  {item.category && (
-                    <span className="text-[10px] uppercase font-semibold text-[#D35400] tracking-wider hidden sm:inline-block w-20">
-                      {item.category}
-                    </span>
-                  )}
-                  <span className="font-serif text-lg sm:text-xl text-stone-900 group-hover:text-[#D35400] transition-colors">
-                    {item.question}
-                  </span>
-                </div>
-                <div className="shrink-0 p-1 rounded-full text-stone-400 group-hover:text-stone-700">
-                  {isOpen ? (
-                    <Minus className="w-4 h-4 text-[#D35400]" />
-                  ) : (
-                    <Plus className="w-4 h-4" />
-                  )}
-                </div>
-              </button>
-
-              {isOpen && (
-                <div className="mt-4 pl-0 sm:pl-24 pr-4 text-xs sm:text-sm text-stone-600 leading-relaxed animate-in fade-in duration-150">
-                  <p>{item.answer}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+            {isOpen && (
+              <div id={id} className="pt-3 pr-8 text-stone-600 text-sm sm:text-base leading-relaxed">
+                <p>{item.answer}</p>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
-};
+}

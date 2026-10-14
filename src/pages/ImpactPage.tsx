@@ -1,279 +1,203 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  BarChart3,
-  TrendingUp,
-  Target,
-  BookOpen,
-  ShieldCheck,
-  Users,
-  Compass,
-  CheckCircle2,
-  Sparkles,
-} from "lucide-react";
-import { SectionHeading } from "../components/SectionHeading";
-import {
-  ImpactMetric,
-  type MetricDefinition,
-} from "../components/ImpactMetric";
-import { CTASection } from "../components/CTASection";
-import { STORIES } from "../data/siteConfig";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, BarChart3, FileText, CheckCircle2 } from 'lucide-react';
+import PageHero from '../components/PageHero';
+import SectionHeading from '../components/SectionHeading';
+import PlaceholderNotice from '../components/PlaceholderNotice';
 
-export const ImpactPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  // Indicators aligned strictly with the strategy framework
-  const impactIndicators: MetricDefinition[] = [
-    {
-      indicator: "Cohort Participants Reached",
-      category: "Scale & Inclusion",
-      placeholderValue: "[Target: 25–30 Pilot Cohort Scholars]",
-      context:
-        "Rigorous selection ensuring diverse socio-economic representation, academic paths, and vocational aims.",
-      measurementMethod: "Cohort registration & verified attendance records",
-    },
-    {
-      indicator: "Baseline-to-Post Growth in Life Clarity",
-      category: "Psychological Empowerment",
-      placeholderValue: "[Pre- & Post-Camp Assessment Scheduled]",
-      context:
-        "Measuring quantitative shifts in self-efficacy, internal locus of control, and personal vision before and after the 4-day retreat.",
-      measurementMethod:
-        "Standardized psychological self-assessment instrument",
-    },
-    {
-      indicator: "Practical Financial Literacy Mastery",
-      category: "Capability Building",
-      placeholderValue: "[Curriculum Evaluation In Progress]",
-      context:
-        "Testing practical competencies in personal cash flows, debt management, investment principles, and long-term planning.",
-      measurementMethod: "Post-module practical simulation assessments",
-    },
-    {
-      indicator: "Multi-Year Life Blueprints Completed",
-      category: "Actionable Planning",
-      placeholderValue: "[100% of Camp Graduates Expected]",
-      context:
-        "Every scholar produces a bound, personal life execution blueprint with tangible 1-year and 3-year milestones.",
-      measurementMethod: "Blueprint submission and facilitator review",
-    },
-    {
-      indicator: "Active Mentors & Speakers Engaged",
-      category: "Relational Ecosystem",
-      placeholderValue: "[Recruitment for Pilot Cohort Active]",
-      context:
-        "Seasoned professionals providing intergenerational guidance, fireside sessions, and ongoing advice.",
-      measurementMethod: "Mentor commitment agreements & session logs",
-    },
-    {
-      indicator: "6-Month Post-Camp Accountability Retention",
-      category: "Long-term Longitudinal",
-      placeholderValue: "[Post-Pilot Longitudinal Tracking]",
-      context:
-        "Tracking scholar pod meeting frequency, milestone execution, and sustained peer support six months post-camp.",
-      measurementMethod: "Quarterly peer-circle check-in logs",
-    },
-    {
-      indicator: "Grassroots Projects / Ventures Incubated",
-      category: "Community Contribution",
-      placeholderValue: "[Post-Camp Fellowship Tracking]",
-      context:
-        "Tracking community solutions, creative initiatives, or social enterprises initiated by cohort alumni.",
-      measurementMethod: "Next Horizon Fellowship milestones",
-    },
-    {
-      indicator: "Institutional & Venue Partnerships Formed",
-      category: "Ecosystem Sustainability",
-      placeholderValue: "[Founding Partner Alignment Underway]",
-      context:
-        "Foundations, corporate sponsors, and educational institutions funding scholarships and spaces.",
-      measurementMethod: "Executed partnership Memoranda of Understanding",
-    },
-  ];
-
-  const categories = [
-    "All",
-    "Scale & Inclusion",
-    "Psychological Empowerment",
-    "Capability Building",
-    "Actionable Planning",
-    "Relational Ecosystem",
-    "Long-term Longitudinal",
-  ];
-
-  const filteredMetrics =
-    selectedCategory === "All"
-      ? impactIndicators
-      : impactIndicators.filter((m) => m.category === selectedCategory);
+export default function ImpactPage() {
+  const impactImage = "/src/assets/images/young_innovators_impact_1791935608989.jpg";
 
   return (
-    <div className="space-y-24 sm:space-y-32 pt-8 sm:pt-14">
-      {/* 1. EDITORIAL HEADER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs uppercase tracking-widest font-semibold text-[#D35400]">
-              Accountability & Evidence
-            </span>
-            <span className="text-stone-300">·</span>
-            <span className="text-xs text-stone-500 font-mono">
-              Our Results & Longitudinal Framework
-            </span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal text-[#121316] leading-[1.08] text-balance">
-            A public record of rigorous growth and genuine impact.
-          </h1>
-          <p className="mt-6 text-base sm:text-lg text-stone-600 leading-relaxed font-sans">
-            We do not manufacture vanity numbers. As our inaugural cohorts
-            launch, this public ledger will publish verified baseline-to-post
-            assessments, longitudinal tracking, and real participant outcomes.
-          </p>
-        </div>
-      </section>
+    <div className="bg-stone-50">
+      
+      {/* 1. PAGE HERO */}
+      <PageHero
+        kicker="Impact"
+        title="Grounded Accountability Over Vanity Metrics"
+        description="We evaluate real human outcomes: self-authored life plans, durable peer circles, and long-term momentum."
+        breadcrumbs={[{ label: 'Impact' }]}
+      />
 
-      {/* 2. THE RIGOUR MANIFESTO */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#FAF3E8]/80 border border-[#E8DEC9] rounded-2xl p-8 sm:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <span className="text-xs uppercase tracking-widest font-semibold text-[#D35400]">
-                Methodological Standard
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-serif text-[#121316]">
-                How We Approach Measurement
-              </h2>
-              <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                Many youth programmes rely purely on post-event satisfaction
-                surveys. Mirroring Possibilities pairs qualitative reflection
-                with validated developmental indicators, measuring participant
-                agency before the camp, immediately following commencement, and
-                at 6-month longitudinal intervals.
-              </p>
-              <div className="flex flex-wrap gap-4 text-xs font-mono text-stone-600 pt-2">
-                <span>• Pre-Camp Baseline Audit</span>
-                <span>• Immediate Competency Assessment</span>
-                <span>• 6-Month Blueprint Execution Review</span>
-              </div>
-            </div>
+      {/* 2. OUR EVALUATION PILLARS */}
+      <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div className="lg:col-span-6 space-y-4">
+              <SectionHeading
+                kicker="Measurement"
+                title="What We Actually Track"
+                description="Rather than claiming outsized statistics, we track four concrete markers of personal transformation:"
+              />
 
-            <div className="lg:col-span-4 p-6 bg-white border border-stone-200 rounded-xl">
-              <div className="flex items-center gap-2 text-stone-900 font-serif text-lg mb-2">
-                <ShieldCheck className="w-5 h-5 text-[#D35400]" />
-                <span>Zero Fabrication Pledge</span>
-              </div>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                In accordance with our governance guidelines, no metric will be
-                published until rigorously audited with cohort participants and
-                facilitators.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. IMPACT INDICATOR FRAMEWORK GRID */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          kicker="Core Indicators"
-          title="The Measurement Matrix"
-          description="The 8 core indicators monitored across every programme cohort. Values will update live as verified results are collected."
-        />
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
-                selectedCategory === cat
-                  ? "bg-[#121316] text-white"
-                  : "bg-stone-100 text-stone-600 hover:bg-stone-200"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredMetrics.map((m) => (
-            <ImpactMetric key={m.indicator} metric={m} />
-          ))}
-        </div>
-      </section>
-
-      {/* 4. FEATURED STORIES SPOTLIGHT */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-          <div>
-            <span className="text-xs uppercase tracking-widest font-semibold text-[#D35400] block mb-2">
-              Qualitative Insights
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#121316]">
-              Stories, Reflections & Field Notes
-            </h2>
-          </div>
-          <Link
-            to="/stories"
-            className="text-xs font-semibold text-[#D35400] hover:underline flex items-center gap-1 shrink-0"
-          >
-            <span>Explore All Journal Entries</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {STORIES.map((s) => (
-            <Link
-              key={s.id}
-              to={`/stories/${s.id}`}
-              className="p-6 bg-white border border-stone-200/90 rounded-xl hover:border-stone-400 transition-colors flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono mb-3">
-                  <span className="text-[#D35400] font-semibold uppercase">
-                    {s.category}
-                  </span>
-                  <span>{s.readTime}</span>
+              <div className="space-y-3 pt-1 text-sm">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">1. Actionable Life Blueprints</strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">Does the participant produce a realistic 1–3 year plan during camp?</span>
+                  </div>
                 </div>
 
-                <h3 className="font-serif text-xl text-stone-900 group-hover:text-[#D35400] transition-colors mb-2 leading-snug">
-                  {s.title}
-                </h3>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">2. Peer Circle Cohesion</strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">Are peer accountability trios still actively meeting after 90 and 180 days?</span>
+                  </div>
+                </div>
 
-                <p className="text-xs text-stone-600 leading-relaxed mb-4">
-                  {s.excerpt}
-                </p>
-              </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">3. Career & Vocational Leaps</strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">Have participants applied for internships or ambitious goals previously out of reach?</span>
+                  </div>
+                </div>
 
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
-                <span>{s.author}</span>
-                <span className="text-stone-400">{s.date}</span>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-stone-900 block">4. Community Leadership</strong>
+                    <span className="text-stone-600 text-xs sm:text-sm">Are alumni taking active responsibility in their local institutions?</span>
+                  </div>
+                </div>
               </div>
-            </Link>
-          ))}
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="relative rounded-xl overflow-hidden border border-stone-200 shadow-sm bg-stone-100 aspect-4/3">
+                <img
+                  src={impactImage}
+                  alt="Young changemakers presenting community projects"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* 5. CTA SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <CTASection
-          kicker="Support the Evidence"
-          title="Back Our Evaluation and Scholar Cohorts"
-          description="Help us fund comprehensive research and psychometric impact evaluations as we build a lasting model for youth empowerment."
-          primaryAction={{
-            label: "Partner With Us",
-            path: "/partner",
-          }}
-          secondaryAction={{
-            label: "Apply for Thrive 20",
-            path: "/apply",
-          }}
-        />
+      {/* 3. FOUR STAGE PARTICIPANT JOURNEY */}
+      <section className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <SectionHeading
+            kicker="Lifecycle"
+            title="The Participant Journey"
+            description="How young people move from initial selection to sustained multiplier leadership."
+            className="mb-10"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 01</span>
+              <h4 className="font-bold text-stone-950 text-sm">Selection</h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Evaluating curiosity, hunger for growth, and readiness for honest self-reflection.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 02</span>
+              <h4 className="font-bold text-stone-950 text-sm">Residential Camp</h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Four days of high-focus masterclasses, mentor dialogues, and roadmap crafting.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 03</span>
+              <h4 className="font-bold text-stone-950 text-sm">Accountability Trios</h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Quarterly peer check-ins assessing personal execution against blueprint goals.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">Stage 04</span>
+              <h4 className="font-bold text-stone-950 text-sm">Multiplier Impact</h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Alumni returning as junior mentors, workshop leaders, or launching community initiatives.
+              </p>
+            </div>
+          </div>
+
+        </div>
       </section>
+
+      {/* 4. VERIFIED REPORTS PLACEHOLDER */}
+      <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            kicker="Transparency"
+            title="Cohort Evaluation & Reports"
+            description="Verified outcomes and findings will be published openly following the pilot cohort."
+            className="mb-8"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 bg-stone-50 border border-stone-200 rounded-xl space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold text-stone-600">
+                <BarChart3 className="w-4 h-4 text-[#F28524]" />
+                <span>Thrive 20 Pilot Baseline Data</span>
+              </div>
+              <h4 className="text-base font-bold text-stone-950">
+                Pre- and Post-Camp Evaluation
+              </h4>
+              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                Participants complete self-efficacy, career clarity, and financial literacy benchmarks before and after the retreat.
+              </p>
+              <PlaceholderNotice
+                label="Pilot Cohort Outcomes"
+                message="Data will be published openly after the conclusion of the inaugural retreat."
+              />
+            </div>
+
+            <div className="p-6 bg-stone-50 border border-stone-200 rounded-xl space-y-3">
+              <div className="flex items-center gap-2 text-xs font-bold text-stone-600">
+                <FileText className="w-4 h-4 text-[#F28524]" />
+                <span>Annual Public Disclosure</span>
+              </div>
+              <h4 className="text-base font-bold text-stone-950">
+                Annual Impact & Financial Stewardship Report
+              </h4>
+              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                Full documentation of scholarships disbursed, donor funds utilized, and qualitative alumni trajectories.
+              </p>
+              <PlaceholderNotice
+                label="Annual Report"
+                message="The inaugural Annual Report will be released upon completion of the pilot operating cycle."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CTA */}
+      <section className="py-14 bg-stone-950 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-xl space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            Support Rigorous Youth Transformation
+          </h2>
+          <p className="text-stone-300 text-sm leading-relaxed">
+            Collaborate as an evaluation partner, underwrite scholarship cohorts, or open job pipelines.
+          </p>
+          <div className="pt-2 flex justify-center">
+            <Link
+              to="/partner"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-950 bg-[#F28524] hover:bg-[#DE7519] rounded-md transition-colors"
+            >
+              Partner With Us
+              <ArrowRight className="w-3.5 h-3.5 text-stone-950" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
-};
+}

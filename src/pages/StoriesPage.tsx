@@ -1,131 +1,124 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUpRight, BookOpen, Clock, Tag } from "lucide-react";
-import { SectionHeading } from "../components/SectionHeading";
-import { STORIES, type Story } from "../data/siteConfig";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, BookOpen } from 'lucide-react';
+import PageHero from '../components/PageHero';
+import { siteConfig } from '../data/siteConfig';
 
-export const StoriesPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-
-  const categories = [
-    "All",
-    "Stories",
-    "Reflections",
-    "Programme Updates",
-    "Participant Voices",
-    "Thought Leadership",
-  ];
-
-  const filteredStories =
-    selectedCategory === "All"
-      ? STORIES
-      : STORIES.filter((s) => s.category === selectedCategory);
+export default function StoriesPage() {
+  const [selectedStory, setSelectedStory] = useState(siteConfig.stories[0]);
+  const stories = siteConfig.stories;
 
   return (
-    <div className="space-y-24 sm:space-y-32 pt-8 sm:pt-14">
-      {/* 1. EDITORIAL HEADER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs uppercase tracking-widest font-semibold text-[#D35400]">
-              The Journal
-            </span>
-            <span className="text-stone-300">·</span>
-            <span className="text-xs text-stone-500 font-mono">
-              Dispatches & Perspectives
-            </span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal text-[#121316] leading-[1.08] text-balance">
-            Stories, field reflections, and ideas on youth development.
-          </h1>
-          <p className="mt-6 text-base sm:text-lg text-stone-600 leading-relaxed font-sans">
-            A public journal documenting the philosophy of Mirroring
-            Possibilities, curriculum explorations, and reflections on
-            navigating the defining threshold of turning twenty.
-          </p>
-        </div>
-      </section>
+    <div className="bg-stone-50">
+      
+      {/* 1. PAGE HERO */}
+      <PageHero
+        kicker="Journal & Perspectives"
+        title="Field Notes on Youth Potential"
+        description="Essays, programme design insights, and reflections on exposure and human agency."
+        breadcrumbs={[{ label: 'Stories & Journal' }]}
+      />
 
-      {/* 2. CATEGORY FILTER TABS & STORY GRID */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Category Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-stone-200 pb-4">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 text-xs font-medium rounded-md transition-colors ${
-                selectedCategory === cat
-                  ? "bg-[#121316] text-white shadow-xs"
-                  : "bg-stone-100 text-stone-600 hover:bg-stone-200"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      {/* 2. ARTICLE READER */}
+      <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            {/* Left: Article Body */}
+            <div className="lg:col-span-8 space-y-6">
+              {selectedStory && (
+                <article className="space-y-4">
+                  
+                  {/* Clean unboxed text metadata */}
+                  <div className="flex items-center gap-2 text-xs text-stone-500 font-medium">
+                    <span className="text-[#D96D14] font-bold">{selectedStory.category}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{selectedStory.date}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{selectedStory.readTime}</span>
+                  </div>
 
-        {/* Stories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredStories.map((story) => (
-            <article
-              key={story.id}
-              className="p-8 bg-white border border-stone-200/90 rounded-2xl hover:border-stone-400 hover:shadow-sm transition-all duration-200 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs text-stone-500 font-mono mb-4">
-                  <span className="text-[#D35400] font-semibold uppercase tracking-wider">
-                    {story.category}
-                  </span>
-                  <span>{story.readTime}</span>
+                  <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-stone-950 text-balance leading-tight">
+                    {selectedStory.title}
+                  </h1>
+
+                  <p className="text-base text-stone-600 font-medium leading-relaxed border-l-2 border-[#F28524] pl-3.5 my-3 italic">
+                    {selectedStory.summary}
+                  </p>
+
+                  <div className="space-y-3.5 text-stone-700 text-sm sm:text-base leading-relaxed pt-1">
+                    {selectedStory.body.map((p, idx) => (
+                      <p key={idx}>{p}</p>
+                    ))}
+                  </div>
+
+                  <div className="pt-6 border-t border-stone-200 text-xs text-stone-500">
+                    Published by Thrive Culture Editorial.
+                  </div>
+
+                </article>
+              )}
+            </div>
+
+            {/* Right: Archive list */}
+            <div className="lg:col-span-4 space-y-5">
+              <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 space-y-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900 flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-[#F28524]" />
+                  <span>Articles & Dispatches</span>
+                </h3>
+
+                <div className="space-y-2">
+                  {stories.map((story) => {
+                    const isCurrent = selectedStory.id === story.id;
+                    return (
+                      <button
+                        key={story.id}
+                        type="button"
+                        onClick={() => setSelectedStory(story)}
+                        className={`w-full text-left p-3.5 rounded-lg transition-all border ${
+                          isCurrent
+                            ? 'bg-white border-[#FED7B2] shadow-xs'
+                            : 'bg-transparent border-transparent hover:bg-stone-100 hover:border-stone-200'
+                        }`}
+                      >
+                        <div className="text-xs text-[#D96D14] font-bold mb-0.5">
+                          {story.category} · {story.date}
+                        </div>
+                        <h4 className="text-xs sm:text-sm font-bold text-stone-950 leading-snug">
+                          {story.title}
+                        </h4>
+                        <p className="text-xs text-stone-500 mt-0.5 line-clamp-2">
+                          {story.summary}
+                        </p>
+                      </button>
+                    );
+                  })}
                 </div>
+              </div>
 
-                <Link to={`/stories/${story.id}`}>
-                  <h3 className="font-serif text-2xl text-stone-900 group-hover:text-[#D35400] transition-colors mb-3 leading-snug">
-                    {story.title}
-                  </h3>
-                </Link>
-
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6">
-                  {story.excerpt}
+              {/* Newsletter Callout */}
+              <div className="p-5 bg-stone-100 border border-stone-200 rounded-xl space-y-2">
+                <h4 className="font-bold text-stone-950 text-xs sm:text-sm">
+                  Future Editorial Releases
+                </h4>
+                <p className="text-stone-600 text-xs leading-relaxed">
+                  Want to be notified when new essays or cohort briefs drop?
                 </p>
-
-                {story.quote && (
-                  <blockquote className="p-3 bg-stone-50 border-l-2 border-[#D35400] text-xs font-serif italic text-stone-700 mb-6">
-                    "{story.quote}"
-                  </blockquote>
-                )}
-              </div>
-
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs">
-                <div>
-                  <span className="font-semibold text-stone-900 block">
-                    {story.author}
-                  </span>
-                  <span className="text-[11px] text-stone-500">
-                    {story.role}
-                  </span>
-                </div>
                 <Link
-                  to={`/stories/${story.id}`}
-                  className="inline-flex items-center gap-1 font-semibold text-[#D35400] hover:underline"
+                  to="/contact"
+                  className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-stone-900 hover:text-[#D96D14] transition-colors"
                 >
-                  <span>Read</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <span>Connect with our desk</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F28524]" />
                 </Link>
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
 
-        {filteredStories.length === 0 && (
-          <div className="p-12 text-center bg-stone-100 rounded-xl text-stone-500 text-sm">
-            No articles published under this category yet. Check back following
-            our inaugural cohort.
           </div>
-        )}
+        </div>
       </section>
+
     </div>
   );
-};
+}
