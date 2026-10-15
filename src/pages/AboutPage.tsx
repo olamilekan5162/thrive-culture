@@ -7,7 +7,6 @@ import { siteConfig } from "../data/siteConfig";
 import mentorshipImage from "../assets/images/mentorship_collaboration_1791935608626.jpg";
 
 export default function AboutPage() {
-
   return (
     <div className="bg-stone-50">
       {/* 1. PAGE HERO */}
@@ -85,10 +84,10 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <PlaceholderNotice
+              {/* <PlaceholderNotice
                 label="Vision Statement"
                 message={siteConfig.statements.vision.note}
-              />
+              /> */}
             </div>
 
             {/* Mission */}
@@ -106,10 +105,10 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <PlaceholderNotice
+              {/* <PlaceholderNotice
                 label="Mission Statement"
                 message={siteConfig.statements.mission.note}
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -185,7 +184,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. TEAM PLACEHOLDER */}
-      <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
+      {/* <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             kicker="Stewardship"
@@ -228,7 +227,7 @@ export default function AboutPage() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 7. CTA */}
       <section className="py-14 bg-stone-950 text-white">

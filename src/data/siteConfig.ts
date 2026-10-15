@@ -17,13 +17,13 @@ export const siteConfig = {
     vision: {
       isOfficial: false,
       placeholderText:
-        "A world where every young person has the exposure, agency, and community to build an extraordinary life.",
+        "To inspire a society where leadership thrives, possibilities are realised, and people actively contribute to building a better world.",
       note: "Official vision statement will be supplied by Thrive Culture leadership.",
     },
     mission: {
       isOfficial: false,
       placeholderText:
-        "To connect emerging generations with transformative mentors, practical skill camps, and enduring peer circles that turn potential into reality.",
+        "To promote a positive culture of leadership, inspire people to recognise and pursue possibilities, and drive meaningful societal impact through initiatives, community engagement, education, and purposeful action.",
       note: "Official mission statement will be supplied by Thrive Culture leadership.",
     },
   },

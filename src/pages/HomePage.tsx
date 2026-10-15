@@ -66,7 +66,7 @@ export default function HomePage() {
               <div className="pt-5 border-t border-stone-200 grid grid-cols-3 gap-3 text-xs">
                 <div>
                   <span className="block font-bold text-stone-950 text-sm">
-                    Parent Body
+                    Thrive Culture
                   </span>
                   <span className="text-stone-500">Long-term vision</span>
                 </div>
@@ -114,16 +114,17 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-4">
               <SectionHeading
                 kicker="Why We Exist"
-                title="Proximity Alters Destiny."
-                description="When young people only see what is in their immediate environment, their sense of what is possible remains limited. Thrive Culture changes that equation."
+                title="Our Vision"
+                description="When people are isolated from strong leadership and real possibilities, their sense of what can be achieved remains limited. Our vision changes that equation.
+We create environments where leadership is visible, accessible, and contagious, bringing people closer to purpose, inspiring them to realise their fullest potential, and empowering them to actively build a better world."
               />
 
-              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
+              {/* <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                 We are an umbrella organisation that creates high-impact
                 residential camps, student conferences, and direct connections
                 to mentors. Our mission is simple: replace passive drift with
                 purposeful direction.
-              </p>
+              </p> */}
 
               <div className="pt-2">
                 <Link
@@ -139,7 +140,7 @@ export default function HomePage() {
             <div className="lg:col-span-6">
               <div className="bg-stone-50 border border-stone-200 rounded-xl p-6 sm:p-8 space-y-4">
                 <h3 className="text-lg font-bold text-stone-950">
-                  Our Core Pillars
+                  Our Mission
                 </h3>
 
                 <div className="space-y-3 text-sm">
@@ -147,11 +148,11 @@ export default function HomePage() {
                     <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-stone-900">
-                        Exposure First:{" "}
+                        ​Leadership Culture:{" "}
                       </span>
                       <span className="text-stone-600">
-                        You can’t aspire to what you haven’t seen. We bring real
-                        mentors into the room.
+                        Promoting a positive culture of leadership and driving
+                        purposeful action across every level.
                       </span>
                     </div>
                   </div>
@@ -160,11 +161,11 @@ export default function HomePage() {
                     <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-stone-900">
-                        Practical Skills:{" "}
+                        ​Opportunity Pursuit:{" "}
                       </span>
                       <span className="text-stone-600">
-                        No generic hype. We focus on decision-making, financial
-                        literacy, and communication.
+                        Inspiring people to recognize, unlock, and actively
+                        pursue new possibilities.
                       </span>
                     </div>
                   </div>
@@ -173,11 +174,11 @@ export default function HomePage() {
                     <CheckCircle2 className="w-5 h-5 text-[#F28524] shrink-0 mt-0.5" />
                     <div>
                       <span className="font-bold text-stone-900">
-                        Lifelong Peer Coalitions:{" "}
+                        ​Societal Impact:{" "}
                       </span>
                       <span className="text-stone-600">
-                        Bonds forged during our residential retreats last long
-                        after camps wrap.
+                        Creating meaningful, lasting change through community
+                        engagement, education, and targeted initiatives.
                       </span>
                     </div>
                   </div>

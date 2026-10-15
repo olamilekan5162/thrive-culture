@@ -97,72 +97,8 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* 3. FOUR STAGE PARTICIPANT JOURNEY */}
-      <section className="py-14 lg:py-20 bg-stone-50 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            kicker="Lifecycle"
-            title="The Participant Journey"
-            description="How young people move from initial selection to sustained multiplier leadership."
-            className="mb-10"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">
-                Stage 01
-              </span>
-              <h4 className="font-bold text-stone-950 text-sm">Selection</h4>
-              <p className="text-stone-600 text-xs leading-relaxed">
-                Evaluating curiosity, hunger for growth, and readiness for
-                honest self-reflection.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">
-                Stage 02
-              </span>
-              <h4 className="font-bold text-stone-950 text-sm">
-                Residential Camp
-              </h4>
-              <p className="text-stone-600 text-xs leading-relaxed">
-                Four days of high-focus masterclasses, mentor dialogues, and
-                roadmap crafting.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">
-                Stage 03
-              </span>
-              <h4 className="font-bold text-stone-950 text-sm">
-                Accountability Trios
-              </h4>
-              <p className="text-stone-600 text-xs leading-relaxed">
-                Quarterly peer check-ins assessing personal execution against
-                blueprint goals.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
-              <span className="text-xs font-mono font-bold text-[#D96D14]">
-                Stage 04
-              </span>
-              <h4 className="font-bold text-stone-950 text-sm">
-                Multiplier Impact
-              </h4>
-              <p className="text-stone-600 text-xs leading-relaxed">
-                Alumni returning as junior mentors, workshop leaders, or
-                launching community initiatives.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. VERIFIED REPORTS PLACEHOLDER */}
-      <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
+      {/* 3. VERIFIED REPORTS PLACEHOLDER */}
+      {/* <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             kicker="Transparency"
@@ -209,9 +145,9 @@ export default function ImpactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* 5. CTA */}
+      {/* 4. CTA */}
       <section className="py-14 bg-stone-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-xl space-y-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">

@@ -116,7 +116,7 @@ export default function InitiativesPage() {
                   to="/partner"
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-stone-900 hover:text-[#D96D14] transition-colors"
                 >
-                  <span>Partner as a University Host</span>
+                  <span>Partner with us</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#F28524]" />
                 </Link>
               </div>
@@ -140,7 +140,7 @@ export default function InitiativesPage() {
       </section>
 
       {/* 4. PIPELINE ROADMAP */}
-      <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
+      {/* <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             kicker="Pipeline"
@@ -193,7 +193,7 @@ export default function InitiativesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

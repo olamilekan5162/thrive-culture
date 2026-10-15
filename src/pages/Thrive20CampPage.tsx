@@ -289,47 +289,65 @@ export default function Thrive20CampPage() {
         </div>
       </section>
 
-      {/* 4. LIFE FRAMEWORK SECTION */}
+      {/* 4. FOUR STAGE PARTICIPANT JOURNEY */}
       <section className="py-14 lg:py-20 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <SectionHeading
-              kicker="Curriculum"
-              title="The Thrive 20 Life Framework"
-              description="A practical mental model helping participants make sound decisions throughout their twenties."
-            />
+          <SectionHeading
+            kicker="Lifecycle"
+            title="The Participant Journey"
+            description="How young people move from initial selection to sustained multiplier leadership."
+            className="mb-10"
+          />
 
-            <div className="mt-6 p-6 bg-stone-50 border border-stone-200 rounded-xl space-y-4">
-              <h3 className="text-base font-bold text-stone-950">
-                Four Pillars of the Framework
-              </h3>
-              <p className="text-stone-700 text-sm leading-relaxed">
-                {camp.lifeFramework.placeholderText}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 01
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">Selection</h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Evaluating curiosity, hunger for growth, and readiness for
+                honest self-reflection.
               </p>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div className="p-3 bg-white border border-stone-200 rounded-md text-xs text-stone-800">
-                  <strong>1. Self-Mastery:</strong> Managing energy, focus, and
-                  integrity.
-                </div>
-                <div className="p-3 bg-white border border-stone-200 rounded-md text-xs text-stone-800">
-                  <strong>2. Practical Skills:</strong> Execution,
-                  communication, and learning speed.
-                </div>
-                <div className="p-3 bg-white border border-stone-200 rounded-md text-xs text-stone-800">
-                  <strong>3. Financial Baseline:</strong> Budgeting, saving, and
-                  avoiding early debt traps.
-                </div>
-                <div className="p-3 bg-white border border-stone-200 rounded-md text-xs text-stone-800">
-                  <strong>4. Peer Standards:</strong> Building high-trust
-                  relationships that elevate you.
-                </div>
-              </div>
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 02
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">
+                Residential Camp
+              </h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Four days of high-focus masterclasses, mentor dialogues, and
+                roadmap crafting.
+              </p>
+            </div>
 
-              <PlaceholderNotice
-                label="Curriculum Framework"
-                message={camp.lifeFramework.note}
-              />
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 03
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">
+                Accountability Trios
+              </h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Quarterly peer check-ins assessing personal execution against
+                blueprint goals.
+              </p>
+            </div>
+
+            <div className="p-5 bg-white border border-stone-200 rounded-xl space-y-2 shadow-xs">
+              <span className="text-xs font-mono font-bold text-[#D96D14]">
+                Stage 04
+              </span>
+              <h4 className="font-bold text-stone-950 text-sm">
+                Multiplier Impact
+              </h4>
+              <p className="text-stone-600 text-xs leading-relaxed">
+                Alumni returning as junior mentors, workshop leaders, or
+                launching community initiatives.
+              </p>
             </div>
           </div>
         </div>
